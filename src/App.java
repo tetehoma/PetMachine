@@ -11,7 +11,7 @@ public class App extends JFrame {
     public App() {
         //window configuration
         setTitle("Pet Washing Machine");
-        setSize(400, 300);
+        setSize(500, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         //layout configuration
@@ -34,11 +34,20 @@ public class App extends JFrame {
         JButton addShampooButton = new JButton("Add Shampoo");
         JButton setPetButton = new JButton("Set Pet");
         JButton takeShowerButton = new JButton("Take a Shower");
+        JButton removePetButton = new JButton("Remove Pet");
+        JButton washMachineButton = new JButton("Wash Machine");
+    
+            removePetButton.addActionListener(e -> {
+                petMachine.removePet();
+                statusLabel.setText(getPetStatus());
+            });
 
         buttonPanel.add(addWaterButton);
         buttonPanel.add(addShampooButton);
         buttonPanel.add(setPetButton);
         buttonPanel.add(takeShowerButton);
+        buttonPanel.add(removePetButton);
+        buttonPanel.add(washMachineButton);
 
         add(buttonPanel, BorderLayout.SOUTH);
 
