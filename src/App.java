@@ -1,6 +1,8 @@
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class App extends JFrame {
     private JLabel statusLabel, welcomeLabel;
@@ -55,7 +57,13 @@ public class App extends JFrame {
 
         add(buttonPanel, BorderLayout.SOUTH);
 
-        
+        //Button actions
+        addWaterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                petMachine.addWater();
+            }
+        });
     }
 
     private String getPetStatus() {

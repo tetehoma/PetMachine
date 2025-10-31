@@ -53,7 +53,7 @@ public class PetMachine {
 
     public void addWater() {
         if (this.water == 30) {
-            System.out.println("Water limit exceeded. Cannot add more water.");
+            
             return;
         }
         this.water += 2;
