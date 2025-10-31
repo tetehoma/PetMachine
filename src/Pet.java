@@ -14,16 +14,16 @@ public class Pet {
     public void setName(String name) {
         this.name = name;
     }
-    public Boolean isClean() {
-        return clean;
-    }
-    public void setClean(Boolean clean) {
-        this.clean = clean;
-    }
 
     public Boolean getClean() {
         return clean;
     }
+
+    public void setClean(Boolean clean) {
+        this.clean = clean;
+    }
+
+   
 
 
 }

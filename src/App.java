@@ -12,12 +12,14 @@ public class App extends JFrame {
     public App() {
 
         String petName = JOptionPane.showInputDialog(this, "Input name the pet:");
-                    if (petName != null && !petName.trim().isEmpty()) {
-                        petName = "pet";
-                    } else {
-                        pet.setName(petName);
-                        pet.setClean(false);
-                    }
+        if (petName == null || petName.trim().isEmpty()) {
+            petName = "Unnamed Pet";
+        } else {
+            petName = petName.trim();
+            pet.setName(petName);
+            pet.setClean(false);
+        }
+        
 
         //window configuration
         setTitle("Pet Washing Machine");
@@ -72,8 +74,8 @@ public class App extends JFrame {
         });
     }
 
-    private String getPetStatus() {
-    return pet.getName() + " is " + (pet.isClean() ? "clean" : "not clean");
+    public String getPetStatus() {
+    return pet.getName() + " is " + (pet.getClean() ? "clean" : "not clean");
     }
     public static void main(String[] args) {
         new App();

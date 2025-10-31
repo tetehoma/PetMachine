@@ -79,7 +79,7 @@ public class PetMachine {
         return pet != null;
     }
     public void removePet() {
-        this.clean = this.pet.isClean();
+        this.clean = this.pet.getClean();
         System.out.println("Removing " + pet.getName() + " from the machine.");
         this.pet = null;
     }
