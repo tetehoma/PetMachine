@@ -69,7 +69,7 @@ public class App extends JFrame {
             public void actionPerformed(ActionEvent e){
                 petMachine.takeAShower();
             }
-        })
+        });
     }
 
     private String getPetStatus() {
