@@ -6,8 +6,10 @@ import javax.swing.JOptionPane;
 
 public class App extends JFrame {
     private JLabel statusLabel;
-    private PetMachine petMachine = new PetMachine();
+    private PetMachine petMachine = new PetMachine(); 
+    
     private Scanner scanner = new Scanner(System.in);
+
     public App() {
         //configurações da janela
         setTitle("Pet Washing Machine");
@@ -58,5 +60,8 @@ public class App extends JFrame {
                     System.out.println("Invalid option. Please try again.");
             }
         }
+    }
+    public static void main(String[] args) {
+        new App();
     }
 }
