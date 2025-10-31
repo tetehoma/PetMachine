@@ -25,8 +25,22 @@ public class App extends JFrame {
         //Label status
         statusLabel = new JLabel(getPetStatus(), SwingConstants.CENTER);
         statusLabel.setFont(new Font("Arial", Font.BOLD, 16));
-        add(statusLabel, BorderLayout.SOUTH);
-        
+        add(statusLabel, BorderLayout.CENTER);
+
+        //Buttons and menu
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(4, 2));
+        JButton addWaterButton = new JButton("Add Water");
+        JButton addShampooButton = new JButton("Add Shampoo");
+        JButton setPetButton = new JButton("Set Pet");
+        JButton takeShowerButton = new JButton("Take a Shower");
+
+        buttonPanel.add(addWaterButton);
+        buttonPanel.add(addShampooButton);
+        buttonPanel.add(setPetButton);
+        buttonPanel.add(takeShowerButton);
+
+        add(buttonPanel, BorderLayout.SOUTH);
 
         while (true) {
             System.out.println("1. Add Water");
