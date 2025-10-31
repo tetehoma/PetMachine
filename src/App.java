@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -38,6 +38,7 @@ public class App extends JFrame {
         //Buttons and menu
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(4, 2));
+        buttonPanel.setBackground(Color.BLACK);
         JButton addWaterButton = new JButton("Add Water");
         JButton addShampooButton = new JButton("Add Shampoo");
         JButton setPetButton = new JButton("Set Pet");
