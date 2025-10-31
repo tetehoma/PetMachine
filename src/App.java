@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class App extends JFrame {
     private JLabel statusLabel;
@@ -34,10 +35,12 @@ public class App extends JFrame {
                     petMachine.addShampoo();
                     break;
                 case 3:
-                    System.out.print("Enter pet name: ");
-                    String name = scanner.next();
-                    Pet pet = new Pet(name, false);
-                    petMachine.setPet(pet);
+                    String petName = JOptionPane.showInputDialog(this, "Input name the pet:");
+                    if (petName != null && !petName.trim().isEmpty()) {
+                        petName = "pet";
+                    } else {
+                        Pet pet = new Pet(petName,false);
+                    }
                 case 4:
                     petMachine.takeAShower();
                     break;
