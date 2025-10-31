@@ -64,6 +64,12 @@ public class App extends JFrame {
                 petMachine.addWater();
             }
         });
+        takeShowerButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                petMachine.takeAShower();
+            }
+        })
     }
 
     private String getPetStatus() {
