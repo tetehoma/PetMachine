@@ -17,7 +17,7 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         statusLabel = new JLabel("Welcome to the Pet Washing Machine!");
         add(statusLabel);
-
+        setVisible(true);
         while (true) {
             System.out.println("1. Add Water");
             System.out.println("2. Add Shampoo");
