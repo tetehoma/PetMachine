@@ -1,23 +1,33 @@
 import java.util.Scanner;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import java.awt.*;
+import javax.swing.*;
 
 public class App extends JFrame {
-    private JLabel statusLabel;
+    private JLabel statusLabel, welcomeLabel;
     private PetMachine petMachine = new PetMachine(); 
-    
+    private Pet pet = new Pet("", false);
     private Scanner scanner = new Scanner(System.in);
 
     public App() {
-        //configurações da janela
+        //window configuration
         setTitle("Pet Washing Machine");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        statusLabel = new JLabel("Welcome to the Pet Washing Machine!");
-        add(statusLabel);
+        setLocationRelativeTo(null);
+        //layout configuration
+        setLayout(new BorderLayout());
+
+        //Label welcome
+        welcomeLabel = new JLabel("Welcome to the Pet Washing Machine!");
+        add(welcomeLabel, BorderLayout.NORTH);
         setVisible(true);
+
+        //Label status
+        statusLabel = new JLabel(getPetStatus(), SwingConstants.CENTER);
+        statusLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        add(statusLabel, BorderLayout.SOUTH);
+        
+
         while (true) {
             System.out.println("1. Add Water");
             System.out.println("2. Add Shampoo");
@@ -41,7 +51,8 @@ public class App extends JFrame {
                     if (petName != null && !petName.trim().isEmpty()) {
                         petName = "pet";
                     } else {
-                        Pet pet = new Pet(petName,false);
+                        pet.setName(petName);
+                        pet.setClean(false);
                     }
                 case 4:
                     petMachine.takeAShower();
@@ -60,6 +71,10 @@ public class App extends JFrame {
                     System.out.println("Invalid option. Please try again.");
             }
         }
+    }
+
+    private String getPetStatus() {
+    return pet.getName() + " is " + (pet.isClean() ? "clean" : "not clean");
     }
     public static void main(String[] args) {
         new App();

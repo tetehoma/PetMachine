@@ -1,21 +1,28 @@
 public class Pet {
-    private final String name;
+    private String name;
     private Boolean clean;
 
     public Pet(String name, Boolean clean) {
         this.name = name;
-        this.clean = false;
+        this.clean = clean;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
     public Boolean isClean() {
         return clean;
     }
     public void setClean(Boolean clean) {
         this.clean = clean;
+    }
+
+    public Boolean getClean() {
+        return clean;
     }
 
 
